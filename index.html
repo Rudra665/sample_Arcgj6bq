@@ -38,7 +38,7 @@
     embedded
     arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
   >
-    <!-- replace the URL with your actual marker image URL -->
+    <!-- Replace 'path_to_your_pattern.patt' with the actual path or URL of your .patt pattern file -->
     <a-nft
       type="nft"
       url="./assets/marker.patt"
@@ -47,12 +47,19 @@
       smoothTolerance=".01"
       smoothThreshold="5"
     >
-      <!-- replace the URL with your actual 3D model URL -->
+      <!-- Replace 'path_to_your_model.glb' with the actual path or URL of your 3D model (GLB format) -->
       <a-entity
-        gltf-model="./assets/asset.mp4"
-        scale="5 5 5"
+        gltf-model="path_to_your_model.glb"
+        scale="1 1 1"
         position="0 0 0"
       ></a-entity>
+      <!-- Replace 'path_to_your_video.mp4' with the actual path or URL of your video file -->
+      <a-video
+        src="./assets/asset.mp4"
+        position="0 1 -2"
+        width="3"
+        height="2"
+      ></a-video>
     </a-nft>
     <a-entity camera></a-entity>
   </a-scene>
