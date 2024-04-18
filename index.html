@@ -11,9 +11,9 @@
     <body style='margin : 0px; overflow: hidden;'>
         <a-scene vr-mode-ui="enabled: false" markerhandler embedded arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
 
-        <a-marker type='barcode' value='7'>
+        <a-marker type='barcode' src="./assets/default-marker.png">
             <a-video
-                src="./video.mp4"
+                src="./assets/asset.mp4"
                 smooth="true" smoothCount="5" smoothTolerance="0.01" smoothThreshold="2"
                 scale="3"
                 rotation="-90 -0 0"
