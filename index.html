@@ -41,27 +41,40 @@
     <!-- Replace 'path_to_your_pattern.patt' with the actual path or URL of your .patt pattern file -->
     <a-nft
       type="nft"
-      url="./assets/default-marker.png"
+      url="./assets/marker.patt"
       smooth="true"
       smoothCount="10"
       smoothTolerance=".01"
       smoothThreshold="5"
     >
-      <!-- Replace 'path_to_your_model.glb' with the actual path or URL of your 3D model (GLB format) -->
-      <a-entity
-        gltf-model="path_to_your_model.glb"
-        scale="1 1 1"
-        position="0 0 0"
-      ></a-entity>
       <!-- Replace 'path_to_your_video.mp4' with the actual path or URL of your video file -->
       <a-video
+        id="video"
         src="./assets/asset.mp4"
-        position="0 1 -2"
+        position="0 1.5 -2" <!-- Adjust position as needed -->
         width="3"
         height="2"
+        autoplay="false" <!-- Disable autoplay initially -->
       ></a-video>
     </a-nft>
     <a-entity camera></a-entity>
   </a-scene>
+
+  <script>
+    // Get the video element
+    var videoElement = document.querySelector('#video');
+
+    // Listen for markerFound event
+    document.querySelector('a-nft').addEventListener('markerFound', function () {
+      // Play the video when marker is found
+      videoElement.play();
+    });
+
+    // Listen for markerLost event
+    document.querySelector('a-nft').addEventListener('markerLost', function () {
+      // Pause the video when marker is lost
+      videoElement.pause();
+    });
+  </script>
 </body>
 </html>
